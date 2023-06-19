@@ -1,9 +1,9 @@
 library(readxl)
-Veriler <- read_excel("file location")
+Data <- read_excel("file location")
 
 library(Rcmdr)
 
-Veri <- Dataset
+Data <- Dataset
 Temperature <- Dataset$temperature
 Free_memory <- Dataset$Free.memory
 Ram_avaliable <- Dataset$ram.avaliable
