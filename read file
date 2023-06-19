@@ -1,0 +1,264 @@
+package data_distribution;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.io.RandomAccessFile;
+
+public class Data_File_e001 {
+
+	public static void main(String[] args) throws FileNotFoundException{
+		
+		File sensorFile = new File("file location");
+file location		RandomAccessFile sensorAdapter = null;
+		
+		try {
+			long beginTime = 0, endTime = 0;
+			beginTime = System.currentTimeMillis();
+			
+			sensorAdapter = new RandomAccessFile(sensorFile, "rw");			
+			//File creation
+		    FileOutputStream file1 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file2 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file3 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file4 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file5 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file6 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file7 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file8 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file9 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file10 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file11 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file12 = new FileOutputStream("location\name to open file");
+		    FileOutputStream file13 = new FileOutputStream("location\name to open file");
+		    
+			// Write-in-file
+			PrintWriter write1 = new PrintWriter(file1);
+			PrintWriter write2 = new PrintWriter(file2);
+			PrintWriter write3 = new PrintWriter(file3);
+			PrintWriter write4 = new PrintWriter(file4);
+			PrintWriter write5 = new PrintWriter(file5);
+			PrintWriter write6 = new PrintWriter(file6);
+			PrintWriter write7 = new PrintWriter(file7);
+			PrintWriter write8 = new PrintWriter(file8);
+			PrintWriter write9 = new PrintWriter(file9);
+			PrintWriter write10 = new PrintWriter(file10);
+			PrintWriter write11 = new PrintWriter(file11);
+			PrintWriter write12 = new PrintWriter(file12);
+			PrintWriter write13 = new PrintWriter(file13);
+		    
+			int i = 29; // We start after data 29
+			sensorAdapter.seek(29);
+			int sayaç = 0;
+			
+			String aText="";
+			String bText="";
+			String cText="";
+			String dText="";
+			String eText="";
+			String fText="";
+			String gText="";
+			String hText="";
+			String jText="";
+			String kText="";
+			String lText="";
+			String mText="";
+			String nText="";
+			
+			
+			while (true) {
+				if (i < sensorAdapter.length()) {
+
+					double a = sensorAdapter.readLong();//4 (8 bytes advance)
+					double b = sensorAdapter.readLong();//4 (8 bytes advance)
+					double c = sensorAdapter.readDouble();//6 (8 bytes advance)
+					double d = sensorAdapter.readDouble();//6 (8 bytes advance)
+					double e = sensorAdapter.readLong();//4 (8 bytes advance)
+					double f = sensorAdapter.readLong();//4 (8 bytes advance)
+					double g = sensorAdapter.readLong();//4 (8 bytes advance)
+					double h = sensorAdapter.readFloat();//5 (4 bytes advance)
+					double j = sensorAdapter.readFloat();//5 (4 bytes advance)
+					double k = sensorAdapter.readFloat();//5 (4 bytes advance)
+					double l = sensorAdapter.readLong();//4 (8 bytes advance)
+					double m = sensorAdapter.readLong();//4 (8 bytes advance)
+					double n = sensorAdapter.readFloat();//5 (4 bytes advance)
+					
+					aText+=a+"\n";
+					bText+=b+"\n";
+					cText+=c+"\n";
+					dText+=d+"\n";
+					eText+=e+"\n";
+					fText+=f+"\n";
+					gText+=g+"\n";
+					hText+=h+"\n";
+					jText+=j+"\n";
+					kText+=k+"\n";
+					lText+=l+"\n";
+					mText+=m+"\n";
+					nText+=n+"\n";
+					
+					if(aText.length()>5000) {
+						write1.print(aText);
+						write1.flush();
+						aText="";
+					}
+					
+					if(bText.length()>5000) {
+						write2.print(bText);
+						write2.flush();
+						bText="";
+					}
+					
+					if(cText.length()>5000) {
+						write3.print(cText);
+						write3.flush();
+						cText="";
+					}
+					
+					if(dText.length()>5000) {
+						write4.print(dText);
+						write4.flush();
+						dText="";
+					}
+					
+					if(eText.length()>5000) {
+						write5.print(eText);
+						write5.flush();
+						eText="";
+					}
+					
+					if(fText.length()>5000) {
+						write6.print(fText);
+						write6.flush();
+						fText="";
+					}
+					if(gText.length()>5000) {
+						write7.print(gText);
+						write7.flush();
+						gText="";
+					}
+					
+					if(hText.length()>5000) {
+						write8.print(hText);
+						write8.flush();
+						hText="";
+					}
+					
+					if(jText.length()>5000) {
+						write9.print(jText);
+						write9.flush();
+						jText="";
+					}
+					
+					if(kText.length()>5000) {
+						write10.print(kText);
+						write10.flush();
+						kText="";
+					}
+					
+					if(lText.length()>5000) {
+						write11.print(lText);
+						write11.flush();
+						lText="";
+					}
+					
+					if(mText.length()>5000) {
+						write12.print(mText);
+						write12.flush();
+						mText="";
+					}
+					
+					if(nText.length()>5000) {
+						write13.print(nText);
+						write13.flush();
+						nText="";
+					}
+					
+					sayaç += 1;
+					i = i + 88; // 88 bytes in total, the next cursor becomes +88.
+					
+				} else {
+					System.out.println("Overall data count" + " "+ sensorAdapter.length());
+					System.out.println("Number of data in 1 file:"+ " " + sayaç);
+					break;
+				}
+			}
+			
+			
+			if(aText.length()>0) 
+				write1.print(aText);
+			
+			if(bText.length()>0) 
+				write2.print(bText);
+			
+			if(cText.length()>0) 
+				write3.print(cText);
+			
+			if(dText.length()>0) 
+				write4.print(dText);
+			
+			if(eText.length()>0) 
+				write5.print(eText);
+			
+			if(fText.length()>0) 
+				write6.print(fText);
+			
+			if(gText.length()>0) 
+				write7.print(gText);
+			
+			if(hText.length()>0) 
+				write8.print(hText);
+			
+			if(jText.length()>0) 
+				write9.print(jText);
+			
+			if(kText.length()>0) 
+				write10.print(kText);
+			
+			if(lText.length()>0) 
+				write11.print(lText);
+			
+			if(mText.length()>0) 
+				write12.print(mText);
+			
+			if(nText.length()>0) 
+				write13.print(nText);
+			
+			write1.close();
+			write2.close();
+			write3.close();
+			write4.close();
+			write5.close();
+			write6.close();
+			write7.close();
+			write8.close();
+			write9.close();
+			write10.close();
+			write11.close();
+			write12.close();
+			write13.close();
+			
+		
+			file1.close();
+			file2.close();
+			file3.close();
+			file4.close();
+			file5.close();
+			file6.close();
+			file7.close();
+			file8.close();
+			file9.close();
+			file10.close();
+			file11.close();
+			file12.close();
+			file13.close();
+			
+			beginTime = System.currentTimeMillis();
+			System.out.println(((double) (beginTime - endTime)) / 60*1000);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}
