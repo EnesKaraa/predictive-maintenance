@@ -1,0 +1,24 @@
+library(readxl)
+Data <- read_excel("location")
+Dataset <- Data
+
+Temperature <- Dataset$Temperature
+Free_memory <- Dataset$Free_Memory
+Ram_avaliable <- Dataset$Ram_Avaliable
+network <- Dataset$Network_IFsBytes_Recv
+Voltage <- Dataset$Voltage_Native
+Frequency <- Dataset$Frequency
+load <- Dataset$Load
+power <- Dataset$Power
+memory_usage <- Dataset$Memory_Usage_Rate
+
+library(EnvStats)
+test_Temperature <- rosnerTest(Temperature, k=3)
+test_FreeMemory <-rosnerTest(Free_memory, k=3)
+test_Load <-rosnerTest(load, k=3)
+test_MemoryUsage <-rosnerTest(memory_usage, k=3)
+test_Network <-rosnerTest(network, k=3)
+test_Power <-rosnerTest(power, k=3)
+test_RamAvaliable <-rosnerTest(Ram_avaliable, k=3)
+test_Voltage <-rosnerTest(Voltage, k=3)
+test_Freqency <-rosnerTest(Frequency, k=3)
