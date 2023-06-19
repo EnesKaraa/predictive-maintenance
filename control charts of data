@@ -1,0 +1,27 @@
+library(readxl)
+Veriler <- read_excel("file location")
+
+library(Rcmdr)
+
+Veri <- Dataset
+Temperature <- Dataset$temperature
+Free_memory <- Dataset$Free.memory
+Ram_avaliable <- Dataset$ram.avaliable
+network <- Dataset$network.IFsBytes
+Voltage <- Dataset$Voltage.Native
+Frequency <- Dataset$Freqency
+load <- Dataset$load
+power <- Dataset$power
+memory_usage <- Dataset$memory.usage.rate
+
+
+library(qcc)
+xbarchart = qcc(Dataset$temperature, type = "xbar.one")
+xbarchart = qcc(Dataset$Free.memory, type = "xbar.one")
+xbarchart = qcc(Dataset$ram.avaliable, type = "xbar.one")
+xbarchart = qcc(Dataset$network.IFsBytes, type = "xbar.one")
+xbarchart = qcc(Dataset$Voltage.Native, type = "xbar.one")
+xbarchart = qcc(Dataset$Freqency, type = "xbar.one")
+xbarchart = qcc(Dataset$load, type = "xbar.one")
+xbarchart = qcc(Dataset$power, type = "xbar.one")
+xbarchart = qcc(Dataset$memory.usage.rate, type = "xbar.one")
