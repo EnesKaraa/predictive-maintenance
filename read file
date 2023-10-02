@@ -19,19 +19,19 @@ file location		RandomAccessFile sensorAdapter = null;
 			
 			sensorAdapter = new RandomAccessFile(sensorFile, "rw");			
 			//File creation
-		    FileOutputStream file1 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file2 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file3 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file4 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file5 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file6 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file7 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file8 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file9 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file10 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file11 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file12 = new FileOutputStream("location\name to open file");
-		    FileOutputStream file13 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file1 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file2 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file3 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file4 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file5 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file6 = new FileOutputStream("location\name to open file");
+	    	        FileOutputStream file7 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file8 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file9 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file10 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file11 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file12 = new FileOutputStream("location\name to open file");
+		        FileOutputStream file13 = new FileOutputStream("location\name to open file");
 		    
 			// Write-in-file
 			PrintWriter write1 = new PrintWriter(file1);
